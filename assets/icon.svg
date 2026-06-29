@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AvNav">
+  <rect width="64" height="64" rx="12" fill="#0d47a1"/>
+  <!-- compass rose / chartplotter motif -->
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.85"/>
+  <polygon points="32,12 37,32 32,52 27,32" fill="#ffffff"/>
+  <polygon points="32,12 37,32 32,32" fill="#e53935"/>
+  <circle cx="32" cy="32" r="3" fill="#ffffff"/>
+</svg>

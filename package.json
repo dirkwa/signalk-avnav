@@ -1,0 +1,64 @@
+{
+  "name": "signalk-avnav",
+  "version": "0.1.0",
+  "description": "Run AvNav (wellenvogel) as a container via signalk-container and open it from the Signal K admin UI",
+  "main": "plugin/index.js",
+  "type": "module",
+  "signalk-plugin-enabled-by-default": false,
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"webapp/**/*.{ts,html}\" && eslint --fix \"src/**/*.ts\" \"test/**/*.ts\" \"webapp/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\" \"webapp/**/*.ts\"",
+    "build:plugin": "tsc",
+    "build:webapp": "vite build",
+    "build": "npm run build:plugin && npm run build:webapp",
+    "build:all": "npm run lint && npm run build && npm run test",
+    "dev": "vite",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "signalk-node-server-plugin",
+    "signalk-webapp",
+    "signalk-category-utility",
+    "avnav",
+    "navigation",
+    "chartplotter"
+  ],
+  "signalk": {
+    "displayName": "AvNav",
+    "appIcon": "icon.svg",
+    "requires": [
+      "signalk-container"
+    ]
+  },
+  "files": [
+    "plugin/**/*",
+    "public/**/*",
+    "assets/**/*"
+  ],
+  "engines": {
+    "node": ">=22.5.0",
+    "signalk": ">=2.24.0"
+  },
+  "author": "dirkwa",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dirkwa/signalk-avnav.git"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@signalk/server-api": "^2.24.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^10.3.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "express": "^5.2.1",
+    "prettier": "^3.0.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.0.0",
+    "vite": "^8.0.11",
+    "vitest": "^4.1.5"
+  }
+}
