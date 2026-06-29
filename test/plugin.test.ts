@@ -11,7 +11,7 @@ interface AppStub extends Partial<ServerAPI> {
   errorMsg: string | null
 }
 
-function makeApp(dataDir = '/home/dirk/.signalk/plugin-config-data/signalk-avnav'): AppStub {
+function makeApp(dataDir = '/data/.signalk/plugin-config-data/signalk-avnav'): AppStub {
   const app: AppStub = {
     status: '',
     errorMsg: null,

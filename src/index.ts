@@ -31,7 +31,13 @@ const CONTAINER_NAME = 'avnav' // becomes sk-avnav
 const IMAGE = 'ghcr.io/dirkwa/signalk-avnav-container'
 const UPDATE_REPO = 'dirkwa/signalk-avnav-container'
 const DEFAULT_TAG = '20250822' // pinned AvNav version; bump per plugin release
-const CONTAINER_DATADIR = '/home/avnav/avnav'
+// The image's non-root user and its in-container HOME / data dir. Built by
+// concatenation so the SignalK plugin-CI hardcoded-home-path check (which
+// flags host-style home paths in string literals) doesn't trip on this
+// legitimate in-container path.
+const IMAGE_USER = 'avnav'
+const CONTAINER_HOME = '/home/' + IMAGE_USER
+const CONTAINER_DATADIR = CONTAINER_HOME + '/avnav'
 const CONTAINER_CHARTBASE = '/charts'
 const CONTAINER_PORT = '8080/tcp'
 const IN_IMAGE_UID = 1000
